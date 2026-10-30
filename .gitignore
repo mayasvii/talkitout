@@ -1,0 +1,21 @@
+# Node dependencies — never commit these (they can be reinstalled)
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment files — NEVER commit these (they contain secrets)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS metadata
+.DS_Store
+Thumbs.db
