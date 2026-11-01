@@ -72,61 +72,25 @@ const seedDatabase = async () => {
     console.log('[Seeder] Sample student created: student@talkitout.com / Student@123');
 
     // Step 3: Seed 6 Audiobooks (2 stress, 2 motivation, 2 self-help)
-    console.log('[Seeder] Seeding 6 audiobook entries...');
+    console.log('[Seeder] Seeding 2 verified audiobook entries (real audio files)...');
     const audiobooks = [
       {
-        title: 'Mind Over Exam Stress',
-        description: 'A practical, comforting guide packed with cognitive restructuring exercises to handle university examination pressure.',
+        title: 'Meditations — Marcus Aurelius',
+        description: 'Timeless Stoic reflections on overcoming stress, cultivating inner calm, and maintaining mental equilibrium amid life\'s pressures. Narrated by LibriVox volunteers, public domain.',
         type: 'audiobook',
         category: 'stress',
         audioUrl: '/media/audiobooks/exam-stress-relief.mp3',
         coverImage: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80',
-        duration: '18:45',
+        duration: '04:00',
       },
       {
-        title: 'Quiet The Student Mind',
-        description: 'Proven somatic grounding techniques to de-escalate acute stress and panic during university project deadlines.',
-        type: 'audiobook',
-        category: 'stress',
-        audioUrl: '/media/audiobooks/quiet-the-mind.mp3',
-        coverImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80',
-        duration: '24:10',
-      },
-      {
-        title: 'The Focused Scholar: Beat Procrastination',
-        description: 'Behavioral strategies to reclaim your focus, overcome doom-scrolling, and build productive study momentum.',
+        title: 'As a Man Thinketh — James Allen',
+        description: 'A foundational classic on mindful thought, mental resilience, and personal mastery. Thought and character shape our reality. Narrated by LibriVox volunteers, public domain.',
         type: 'audiobook',
         category: 'motivation',
         audioUrl: '/media/audiobooks/beat-procrastination.mp3',
         coverImage: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80',
-        duration: '21:30',
-      },
-      {
-        title: 'Resilience in College: Turning Setbacks into Fuel',
-        description: 'Inspiring stories and psychological insights for bouncing back from low grades, interview rejections, and burnout.',
-        type: 'audiobook',
-        category: 'motivation',
-        audioUrl: '/media/audiobooks/college-resilience.mp3',
-        coverImage: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80',
-        duration: '32:00',
-      },
-      {
-        title: 'Overcoming Imposter Syndrome',
-        description: 'How to silence your inner critic and embrace your authentic abilities in competitive academic environments.',
-        type: 'audiobook',
-        category: 'self-help',
-        audioUrl: '/media/audiobooks/imposter-syndrome.mp3',
-        coverImage: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80',
-        duration: '27:15',
-      },
-      {
-        title: 'Social Anxiety to Social Confidence',
-        description: 'A step-by-step roadmap for making genuine friends, joining campus clubs, and presenting in seminars with ease.',
-        type: 'audiobook',
-        category: 'self-help',
-        audioUrl: '/media/audiobooks/social-confidence.mp3',
-        coverImage: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80',
-        duration: '29:50',
+        duration: '04:00',
       },
     ];
 

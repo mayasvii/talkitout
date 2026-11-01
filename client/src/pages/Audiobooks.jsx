@@ -58,6 +58,18 @@ const Audiobooks = () => {
     }
   };
 
+  // Only display audiobooks with verified real audio files to prevent dead play buttons
+  const validAudiobooks = audiobooks.filter((book) => {
+    if (!book || !book.audioUrl) return false;
+    const knownPlaceholders = [
+      'quiet-the-mind.mp3',
+      'college-resilience.mp3',
+      'imposter-syndrome.mp3',
+      'social-confidence.mp3',
+    ];
+    return !knownPlaceholders.some((placeholder) => book.audioUrl.endsWith(placeholder));
+  });
+
   return (
     <div className="media-page page-container">
       {/* Page Header */}
@@ -103,18 +115,26 @@ const Audiobooks = () => {
         <div style={{ padding: '4rem 0' }}>
           <LoadingSpinner message="Gathering calming audiobooks for you..." />
         </div>
-      ) : audiobooks.length === 0 ? (
+      ) : validAudiobooks.length === 0 ? (
         <EmptyState
           icon={HeadphonesIcon}
-          title="No audiobooks found in this category"
-          description="Try switching categories or view All Audiobooks."
+          title={
+            selectedCategory === 'self-help'
+              ? 'Self-Help audiobooks coming soon'
+              : 'No audiobooks found in this category'
+          }
+          description={
+            selectedCategory === 'self-help'
+              ? 'We are curating and verifying new public-domain recordings for self-help and confidence. In the meantime, explore our Exam Stress and Daily Motivation audiobooks!'
+              : 'Try switching categories or view All Audiobooks.'
+          }
           actionLabel="View All Audiobooks"
           onAction={() => setSelectedCategory('')}
         />
       ) : (
         /* Audiobooks Grid */
         <div className="media-grid">
-          {audiobooks.map((book) => {
+          {validAudiobooks.map((book) => {
             const isThisTrackPlaying = currentTrack && currentTrack._id === book._id && isPlaying;
             const isThisTrackSelected = currentTrack && currentTrack._id === book._id;
 
