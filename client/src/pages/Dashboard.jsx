@@ -23,11 +23,11 @@ import {
 import LoadingSpinner from '../components/common/LoadingSpinner';
 
 const MOOD_OPTIONS = [
-  { level: 5, emoji: '😄', label: 'Great', color: '#4EA382', bg: '#EEF8F3' },
-  { level: 4, emoji: '🙂', label: 'Good', color: '#538075', bg: '#EBF3F0' },
-  { level: 3, emoji: '😐', label: 'Okay', color: '#7E74E0', bg: '#F0EEFC' },
-  { level: 2, emoji: '😔', label: 'Down', color: '#D9825B', bg: '#FDF5EF' },
-  { level: 1, emoji: '😣', label: 'Overwhelmed', color: '#D9534F', bg: '#FDEDEC' },
+  { level: 5, emoji: '😄', label: 'Great', color: '#2F6F7E', bg: '#DCEBEE' },
+  { level: 4, emoji: '🙂', label: 'Good', color: '#4A8B99', bg: '#E6F1F3' },
+  { level: 3, emoji: '😐', label: 'Okay', color: '#7FA68A', bg: '#E3EEE4' },
+  { level: 2, emoji: '😔', label: 'Down', color: '#D99B4B', bg: '#FDF4E7' },
+  { level: 1, emoji: '😣', label: 'Overwhelmed', color: '#E3A857', bg: '#FDF6EB' },
 ];
 
 const Dashboard = () => {

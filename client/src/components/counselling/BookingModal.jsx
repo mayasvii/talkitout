@@ -157,7 +157,7 @@ const BookingModal = ({ counsellor, onClose, onRefreshCounsellors }) => {
           contact: '9999999999',
         },
         theme: {
-          color: '#538075',
+          color: '#2F6F7E',
         },
         modal: {
           ondismiss: function () {
