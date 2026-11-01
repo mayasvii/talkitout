@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { LeafIcon, MenuIcon, CloseIcon, UserIcon, LogOutIcon } from '../common/Icons';
+import {
+  LeafIcon,
+  MenuIcon,
+  CloseIcon,
+  UserIcon,
+  LogOutIcon,
+  WindIcon,
+  BookOpenIcon,
+  ShieldAlertIcon,
+} from '../common/Icons';
 
 const Navbar = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -46,6 +55,14 @@ const Navbar = () => {
           <NavLink to="/counselling" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             Counselling
           </NavLink>
+          {isAuthenticated && (
+            <NavLink to="/journal" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+              Journal
+            </NavLink>
+          )}
+          <NavLink to="/emergency" className={({ isActive }) => `nav-link emergency-nav-link ${isActive ? 'active' : ''}`}>
+            Emergency
+          </NavLink>
           {user?.role === 'admin' && (
             <NavLink to="/admin" className={({ isActive }) => `nav-link admin-nav-link ${isActive ? 'active' : ''}`}>
               Admin Panel
@@ -53,8 +70,18 @@ const Navbar = () => {
           )}
         </nav>
 
-        {/* Desktop Auth Section */}
+        {/* Desktop Right Section: Calm Pill + Auth */}
         <div className="navbar-desktop-auth">
+          {/* Instant Calm Down Button */}
+          <Link
+            to="/breathe?routine=box-breathing"
+            className="calm-down-pill"
+            title="Instant Box Breathing de-escalation"
+          >
+            <WindIcon size={16} />
+            <span>Need to calm down?</span>
+          </Link>
+
           {isAuthenticated ? (
             <div className="auth-user-group">
               <NavLink to="/dashboard" className={({ isActive }) => `btn btn-ghost user-pill ${isActive ? 'active' : ''}`}>
@@ -92,6 +119,18 @@ const Navbar = () => {
       {mobileMenuOpen && (
         <div className="mobile-menu-overlay" onClick={closeMenu}>
           <div className="mobile-menu-drawer" onClick={(e) => e.stopPropagation()}>
+            {/* Quick Calm Button inside Mobile Drawer */}
+            <div className="mobile-calm-wrapper">
+              <Link
+                to="/breathe?routine=box-breathing"
+                className="calm-down-pill mobile-calm-btn"
+                onClick={closeMenu}
+              >
+                <WindIcon size={18} />
+                <span>Need to calm down? (Box Breathe)</span>
+              </Link>
+            </div>
+
             <div className="mobile-menu-links">
               <NavLink to="/" className="mobile-nav-link" onClick={closeMenu} end>
                 Home
@@ -107,6 +146,14 @@ const Navbar = () => {
               </NavLink>
               <NavLink to="/counselling" className="mobile-nav-link" onClick={closeMenu}>
                 Counselling
+              </NavLink>
+              {isAuthenticated && (
+                <NavLink to="/journal" className="mobile-nav-link" onClick={closeMenu}>
+                  Private Journal
+                </NavLink>
+              )}
+              <NavLink to="/emergency" className="mobile-nav-link" onClick={closeMenu}>
+                Emergency 24x7 Helplines
               </NavLink>
               {isAuthenticated && (
                 <NavLink to="/dashboard" className="mobile-nav-link" onClick={closeMenu}>

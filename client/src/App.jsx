@@ -21,6 +21,8 @@ import Music from './pages/Music';
 import Breathe from './pages/Breathe';
 import Counselling from './pages/Counselling';
 import AdminDashboard from './pages/AdminDashboard';
+import Journal from './pages/Journal';
+import Emergency from './pages/Emergency';
 
 /**
  * Inner layout wrapper that applies dynamic bottom padding
@@ -42,6 +44,7 @@ const AppLayout = () => {
           <Route path="/music" element={<Music />} />
           <Route path="/breathe" element={<Breathe />} />
           <Route path="/counselling" element={<Counselling />} />
+          <Route path="/emergency" element={<Emergency />} />
 
           {/* Student Protected routes */}
           <Route
@@ -49,6 +52,14 @@ const AppLayout = () => {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/journal"
+            element={
+              <ProtectedRoute>
+                <Journal />
               </ProtectedRoute>
             }
           />

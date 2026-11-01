@@ -13,7 +13,10 @@ const Footer = () => {
             <a href="tel:14416" className="crisis-link">
               Tele-MANAS 14416
             </a>{' '}
-            (free, 24x7 government mental health helpline).
+            (free, 24x7) or visit our{' '}
+            <Link to="/emergency" className="crisis-link">
+              Emergency Helplines page
+            </Link>.
           </p>
         </div>
       </div>
@@ -37,6 +40,8 @@ const Footer = () => {
               <li><Link to="/music">Binaural & Focus Music</Link></li>
               <li><Link to="/breathe">Breathing Exercises</Link></li>
               <li><Link to="/counselling">Student Counselling</Link></li>
+              <li><Link to="/journal">Private Journal</Link></li>
+              <li><Link to="/emergency">24/7 Crisis Helplines</Link></li>
             </ul>
           </div>
 

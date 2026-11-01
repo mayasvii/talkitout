@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import {
   BREATHING_ROUTINES,
@@ -18,10 +18,31 @@ import {
 
 const Breathe = () => {
   const { isAuthenticated, user } = useAuth();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   // Active view: 'list' | 'breathing' | 'yoga'
   const [activeMode, setActiveMode] = useState('list');
   const [selectedRoutine, setSelectedRoutine] = useState(null);
+
+  // Auto-launch routine if passed in URL (e.g. from "Need to calm down?" button)
+  useEffect(() => {
+    const routineQuery = searchParams.get('routine');
+    if (routineQuery) {
+      if (routineQuery === 'yoga') {
+        setSelectedRoutine(DESK_YOGA_ROUTINE);
+        setActiveMode('yoga');
+      } else {
+        const match =
+          BREATHING_ROUTINES.find((r) => r.id === routineQuery) ||
+          BREATHING_ROUTINES.find((r) => r.id.includes(routineQuery)) ||
+          BREATHING_ROUTINES[0]; // Fallback to Box Breathing
+        if (match) {
+          setSelectedRoutine(match);
+          setActiveMode('breathing');
+        }
+      }
+    }
+  }, [searchParams]);
 
   const startBreathingRoutine = (routine) => {
     setSelectedRoutine(routine);
@@ -36,6 +57,10 @@ const Breathe = () => {
   const backToList = () => {
     setActiveMode('list');
     setSelectedRoutine(null);
+    // Clear routine search param without page reload
+    if (searchParams.get('routine')) {
+      setSearchParams({});
+    }
   };
 
   return (

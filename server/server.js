@@ -16,6 +16,8 @@ const mediaRoutes = require('./routes/mediaRoutes');
 const counsellorRoutes = require('./routes/counsellorRoutes');
 const bookingRoutes = require('./routes/bookingRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const moodRoutes = require('./routes/moodRoutes');
+const journalRoutes = require('./routes/journalRoutes');
 
 // Custom error handling middleware
 const { notFound, errorHandler } = require('./middleware/errorHandler');
@@ -68,6 +70,8 @@ app.use('/api/media', mediaRoutes);
 app.use('/api/counsellors', counsellorRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/moods', moodRoutes);
+app.use('/api/journal', journalRoutes);
 
 // Fallback for undefined routes (404)
 app.use(notFound);
