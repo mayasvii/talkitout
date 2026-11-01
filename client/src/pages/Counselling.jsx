@@ -135,7 +135,7 @@ const Counselling = () => {
                   <button
                     onClick={() => setActiveCounsellorForBooking(counsellor)}
                     disabled={openSlotsCount === 0}
-                    className="btn btn-primary btn-block btn-lg"
+                    className="btn btn-accent btn-block btn-lg"
                   >
                     <HeartIcon size={18} />
                     <span>{openSlotsCount > 0 ? 'Book a Session' : 'Slots Full'}</span>

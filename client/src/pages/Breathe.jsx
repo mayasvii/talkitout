@@ -176,8 +176,7 @@ const Breathe = () => {
 
               <button
                 onClick={startYogaRoutine}
-                className="btn btn-secondary btn-block exercise-start-btn"
-                style={{ backgroundColor: 'var(--color-warm-accent)', borderColor: 'var(--color-warm-accent)' }}
+                className="btn btn-accent btn-block exercise-start-btn"
               >
                 <HeartIcon size={18} />
                 <span>Begin Desk Yoga Flow</span>

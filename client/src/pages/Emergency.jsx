@@ -102,7 +102,7 @@ const Emergency = () => {
           Every call is <strong>free, anonymous, and 100% confidential</strong>.
         </p>
         <div className="emergency-quick-actions">
-          <a href="tel:14416" className="btn btn-primary btn-lg emergency-call-btn">
+          <a href="tel:14416" className="btn btn-accent btn-lg emergency-call-btn">
             <PhoneIcon size={20} />
             <span>Call Tele-MANAS: 14416 (Free 24x7)</span>
           </a>

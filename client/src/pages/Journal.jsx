@@ -221,7 +221,7 @@ const Journal = () => {
           <div className="compose-actions">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-accent"
               disabled={saving || !title.trim() || !content.trim()}
             >
               {saving ? (

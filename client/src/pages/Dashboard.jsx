@@ -667,7 +667,7 @@ const Dashboard = () => {
             <p className="placeholder-desc">
               Feeling overwhelmed by academics, exams, or campus life? Our verified student counsellors offer confidential 1-on-1 consultations. Once you book, your confirmed time slot, counsellor notes, and meeting link will appear right here.
             </p>
-            <Link to="/counselling" className="btn btn-primary btn-lg">
+            <Link to="/counselling" className="btn btn-accent btn-lg">
               <HeartIcon size={18} />
               <span>Meet Our Counsellors</span>
             </Link>

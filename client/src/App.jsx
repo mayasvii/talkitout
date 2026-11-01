@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { PlayerProvider, usePlayer } from './context/PlayerContext';
 import { ToastProvider } from './context/ToastContext';
@@ -10,6 +10,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './components/layout/ProtectedRoute';
 import AudioPlayer from './components/player/AudioPlayer';
+import { WindIcon } from './components/common/Icons';
 
 // Pages
 import Home from './pages/Home';
@@ -23,6 +24,7 @@ import Counselling from './pages/Counselling';
 import AdminDashboard from './pages/AdminDashboard';
 import Journal from './pages/Journal';
 import Emergency from './pages/Emergency';
+import Exam from './pages/Exam';
 
 /**
  * Inner layout wrapper that applies dynamic bottom padding
@@ -45,6 +47,9 @@ const AppLayout = () => {
           <Route path="/breathe" element={<Breathe />} />
           <Route path="/counselling" element={<Counselling />} />
           <Route path="/emergency" element={<Emergency />} />
+          <Route path="/help-now" element={<Emergency />} />
+          <Route path="/exam" element={<Exam />} />
+          <Route path="/exam-mode" element={<Exam />} />
 
           {/* Student Protected routes */}
           <Route
@@ -78,6 +83,17 @@ const AppLayout = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+
+      {/* Floating mobile instant calm button (bottom-left on mobile screens) */}
+      <Link
+        to="/breathe?routine=box-breathing"
+        className="mobile-floating-calm"
+        aria-label="Need to calm down? 2-minute box breathing"
+      >
+        <WindIcon size={18} />
+        <span>Need to calm down?</span>
+      </Link>
+
       <Footer />
       {/* Toast Notifications Overlay */}
       <ToastContainer />
