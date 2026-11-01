@@ -53,6 +53,7 @@ app.use(express.urlencoded({ extended: false }));
 // Serve static media files (audiobooks & music) from /server/public/media
 // Example URL: http://localhost:5000/media/audiobooks/exam-stress-relief.mp3
 app.use('/media', express.static(path.join(__dirname, 'public', 'media')));
+app.use('/counsellors', express.static(path.join(__dirname, 'public', 'counsellors')));
 
 // Root health check endpoint
 app.get('/api/health', (req, res) => {

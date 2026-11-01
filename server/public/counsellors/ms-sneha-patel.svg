@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <clipPath id="circleClipSneha">
+      <circle cx="100" cy="100" r="96" />
+    </clipPath>
+    <linearGradient id="bgGradSneha" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCF9F3" />
+      <stop offset="100%" stop-color="#F5EBD7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Ring and Background -->
+  <circle cx="100" cy="100" r="99" fill="#E5D6B6" />
+  <circle cx="100" cy="100" r="96" fill="url(#bgGradSneha)" />
+
+  <g clip-path="url(#circleClipSneha)">
+    <!-- Back Hair Flow -->
+    <path d="M 60 85 C 50 120 48 160 52 210 L 148 210 C 152 160 150 120 140 85 C 130 55 70 55 60 85 Z" fill="#1E1714" />
+
+    <!-- Shoulders and Torso -->
+    <!-- Warm Amber Kurta Base -->
+    <path d="M 40 210 Q 46 148 72 136 L 100 148 L 128 136 Q 154 148 160 210 Z" fill="#E3A857" />
+    <!-- Sage Green Dupatta (Draped across left shoulder to chest) -->
+    <path d="M 115 138 Q 140 155 155 210 L 128 210 Q 112 165 96 150 Z" fill="#7FA68A" />
+    <!-- Delicate embroidery line on dupatta -->
+    <path d="M 118 140 Q 138 160 150 210" stroke="#E3EEE4" stroke-width="1.8" stroke-dasharray="3,3" fill="none" />
+
+    <!-- Neck -->
+    <rect x="88" y="112" width="24" height="28" rx="6" fill="#D29766" />
+    <path d="M 88 122 Q 100 132 112 122 Z" fill="#BE8050" opacity="0.4" />
+
+    <!-- Face -->
+    <ellipse cx="100" cy="94" rx="30" ry="35" fill="#D29766" />
+
+    <!-- Ears & Silver Earrings -->
+    <circle cx="70" cy="95" r="5.5" fill="#D29766" />
+    <circle cx="70" cy="98" r="2" fill="#B0B7BD" />
+    <!-- Small dainty jhumka dangling -->
+    <path d="M 68 102 L 72 102 L 73 105 L 67 105 Z" fill="#B0B7BD" />
+
+    <circle cx="130" cy="95" r="5.5" fill="#D29766" />
+    <circle cx="130" cy="98" r="2" fill="#B0B7BD" />
+    <path d="M 128 102 L 132 102 L 133 105 L 127 105 Z" fill="#B0B7BD" />
+
+    <!-- Front Cascading Hair -->
+    <!-- Right side tucked, left side flowing gracefully over shoulder -->
+    <path d="M 69 90 C 70 60 85 52 100 58 C 118 52 131 60 131 88 C 131 76 122 62 100 66 C 78 62 70 76 69 90 Z" fill="#1E1714" />
+    <!-- Wave falling down front shoulder -->
+    <path d="M 68 92 C 60 115 58 145 68 185 C 72 160 74 130 73 102 Z" fill="#1E1714" />
+    <path d="M 69 98 C 64 120 62 145 70 175" stroke="#2D231E" stroke-width="2" fill="none" />
+
+    <!-- Eyebrows (Neat, gently arched) -->
+    <path d="M 81 83 Q 89 79 95 83" stroke="#1E1714" stroke-width="2.2" stroke-linecap="round" fill="none" />
+    <path d="M 105 83 Q 111 79 119 83" stroke="#1E1714" stroke-width="2.2" stroke-linecap="round" fill="none" />
+
+    <!-- Eyes (Warm, radiant, smiling) -->
+    <ellipse cx="88" cy="91" rx="4.2" ry="3" fill="#1E1714" />
+    <ellipse cx="112" cy="91" rx="4.2" ry="3" fill="#1E1714" />
+    <circle cx="86.5" cy="89.5" r="1.3" fill="#FFFFFF" />
+    <circle cx="110.5" cy="89.5" r="1.3" fill="#FFFFFF" />
+    <!-- Upper eyeliner / lash curve -->
+    <path d="M 83 89 Q 88 86 93 89" stroke="#1E1714" stroke-width="1.4" fill="none" />
+    <path d="M 107 89 Q 112 86 117 89" stroke="#1E1714" stroke-width="1.4" fill="none" />
+
+    <!-- Nose -->
+    <path d="M 98 94 Q 100 102 103 102" stroke="#BE8050" stroke-width="1.8" stroke-linecap="round" fill="none" />
+
+    <!-- Cheeks (Warm peachy glow) -->
+    <circle cx="78" cy="100" r="6" fill="#E88374" opacity="0.32" />
+    <circle cx="122" cy="100" r="6" fill="#E88374" opacity="0.32" />
+
+    <!-- Big Warm Welcoming Smile -->
+    <path d="M 90 109 Q 100 123 110 109 Z" fill="#A84343" />
+    <path d="M 91 109 Q 100 115 109 109 Z" fill="#FFFFFF" />
+  </g>
+</svg>

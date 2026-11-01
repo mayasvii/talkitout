@@ -92,59 +92,73 @@ const Counselling = () => {
         />
       ) : (
         /* Counsellor Directory Grid */
-        <div className="counsellors-directory-grid">
-          {counsellors.map((counsellor) => {
-            const openSlotsCount = counsellor.availableSlots?.filter((s) => !s.isBooked).length || 0;
+        <>
+          <div className="counsellors-directory-grid">
+            {counsellors.map((counsellor) => {
+              const openSlotsCount = counsellor.availableSlots?.filter((s) => !s.isBooked).length || 0;
 
-            return (
-              <div key={counsellor._id} className="counsellor-profile-card">
-                <div className="counsellor-card-top">
-                  <img
-                    src={counsellor.photo}
-                    alt={counsellor.name}
-                    className="counsellor-profile-photo"
-                  />
-                  <div className="counsellor-primary-info">
-                    <h3 className="counsellor-full-name">{counsellor.name}</h3>
-                    <p className="counsellor-spec-tag">{counsellor.specialization}</p>
-                    <div className="counsellor-fee-badge">₹{counsellor.fee} / session</div>
+              return (
+                <div key={counsellor._id} className="counsellor-profile-card">
+                  <div className="counsellor-card-top">
+                    <img
+                      src={counsellor.photo}
+                      alt={counsellor.name}
+                      className="counsellor-profile-photo"
+                    />
+                    <div className="counsellor-primary-info">
+                      <h3 className="counsellor-full-name">{counsellor.name}</h3>
+                      <p className="counsellor-spec-tag">{counsellor.specialization}</p>
+                      <div className="counsellor-fee-badge">₹{counsellor.fee} / session</div>
+                    </div>
                   </div>
-                </div>
 
-                <div className="counsellor-card-body">
-                  <p className="counsellor-bio-text">{counsellor.bio}</p>
+                  <div className="counsellor-card-body">
+                    <p className="counsellor-bio-text">{counsellor.bio}</p>
 
-                  <div className="counsellor-modes-row">
-                    <span className="modes-label">Modes:</span>
-                    {counsellor.modes?.map((m) => (
-                      <span key={m} className="counsellor-mode-chip">
-                        {m === 'chat' ? '💬 Online Chat' : '🏫 In-Person'}
+                    <div className="counsellor-modes-row">
+                      <span className="modes-label">Modes:</span>
+                      {counsellor.modes?.map((m) => (
+                        <span key={m} className="counsellor-mode-chip">
+                          {m === 'chat' ? '💬 Online Chat' : '🏫 In-Person'}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="counsellor-slots-status">
+                      <CalendarIcon size={14} />
+                      <span>
+                        <strong>{openSlotsCount}</strong> available slots over next 7 days
                       </span>
-                    ))}
+                    </div>
                   </div>
 
-                  <div className="counsellor-slots-status">
-                    <CalendarIcon size={14} />
-                    <span>
-                      <strong>{openSlotsCount}</strong> available slots over next 7 days
-                    </span>
+                  <div className="counsellor-card-action">
+                    <button
+                      onClick={() => setActiveCounsellorForBooking(counsellor)}
+                      disabled={openSlotsCount === 0}
+                      className="btn btn-accent btn-block btn-lg"
+                    >
+                      <HeartIcon size={18} />
+                      <span>{openSlotsCount > 0 ? 'Book a Session' : 'Slots Full'}</span>
+                    </button>
                   </div>
                 </div>
+              );
+            })}
+          </div>
 
-                <div className="counsellor-card-action">
-                  <button
-                    onClick={() => setActiveCounsellorForBooking(counsellor)}
-                    disabled={openSlotsCount === 0}
-                    className="btn btn-accent btn-block btn-lg"
-                  >
-                    <HeartIcon size={18} />
-                    <span>{openSlotsCount > 0 ? 'Book a Session' : 'Slots Full'}</span>
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+          <p
+            style={{
+              textAlign: 'center',
+              marginTop: '2rem',
+              marginBottom: '1rem',
+              color: 'var(--color-text-muted)',
+              fontSize: '0.875rem',
+            }}
+          >
+            Sample profiles for demonstration.
+          </p>
+        </>
       )}
 
       {/* Booking Flow Modal */}

@@ -179,7 +179,7 @@ const seedDatabase = async () => {
     const counsellors = [
       {
         name: 'Dr. Ananya Sharma',
-        photo: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80',
+        photo: '/counsellors/dr-ananya-sharma.svg',
         specialization: 'Exam Stress, Anxiety & Academic Burnout',
         bio: 'Ph.D. in Clinical Psychology with 8+ years experience guiding college students through exam pressure, imposter syndrome, and emotional regulation.',
         fee: 500,
@@ -188,7 +188,7 @@ const seedDatabase = async () => {
       },
       {
         name: 'Dr. Rahul Verma',
-        photo: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
+        photo: '/counsellors/dr-rahul-verma.svg',
         specialization: 'Depression, Loneliness & Career Confusion',
         bio: 'Compassionate psychotherapist specializing in existential student challenges, hostel adaptation, career dilemmas, and emotional wellness.',
         fee: 450,
@@ -197,7 +197,7 @@ const seedDatabase = async () => {
       },
       {
         name: 'Ms. Sneha Patel',
-        photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+        photo: '/counsellors/ms-sneha-patel.svg',
         specialization: 'Social Anxiety & Interpersonal Relationships',
         bio: 'Certified CBT practitioner and student mentor helping students overcome public speaking fears, social isolation, and relationship friction.',
         fee: 400,
@@ -206,7 +206,7 @@ const seedDatabase = async () => {
       },
       {
         name: 'Dr. Arjun Sen',
-        photo: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=600&q=80',
+        photo: '/counsellors/dr-arjun-sen.svg',
         specialization: 'Mindfulness, Sleep Disorders & Somatic Therapy',
         bio: 'Holistic mental wellness specialist blending mindfulness meditation, CBT, and sleep hygiene coaching to overcome chronic insomnia.',
         fee: 600,
