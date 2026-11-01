@@ -2615,6 +2615,421 @@ a {
   margin-bottom: 2rem;
 }
 
+/* ==========================================================================
+   Panic or Anxiety Attack Grounding Section (5-4-3-2-1 Interactive Flow)
+   ========================================================================== */
+
+.mobile-panic-shortcut-bar {
+  display: none;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-panic-shortcut-bar {
+    display: block;
+  }
+}
+
+.breathe-mobile-panic-pill {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #FCECD6;
+  color: #B87B28;
+  border: 1.5px solid #E3A857;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(227, 168, 87, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.breathe-mobile-panic-pill:hover {
+  background-color: #F8E5C8;
+  transform: translateY(-2px);
+}
+
+.panic-grounding-section {
+  margin-bottom: 3.5rem;
+  background: linear-gradient(135deg, #FDF7ED 0%, #E3EEE4 55%, #DCEBEE 100%);
+  border: 1.5px solid rgba(227, 168, 87, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: 0 8px 30px rgba(31, 46, 51, 0.05);
+}
+
+/* State A: Initial Card */
+.panic-trigger-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media (min-width: 860px) {
+  .panic-trigger-card {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.panic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #FCECD6;
+  color: #B87B28;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(227, 168, 87, 0.4);
+  margin-bottom: 0.85rem;
+}
+
+.panic-trigger-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1F2E33;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.panic-trigger-sub {
+  font-size: 1.1rem;
+  color: #374A50;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.panic-start-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* State B: Interactive Step Flow Card */
+.grounding-flow-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid rgba(47, 111, 126, 0.16);
+  box-shadow: 0 6px 24px rgba(31, 46, 51, 0.06);
+  margin-bottom: 2rem;
+}
+
+.flow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.flow-step-tag {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #B87B28;
+  background-color: #FCECD6;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-right: 0.75rem;
+}
+
+.flow-step-counter {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.flow-close-btn {
+  color: var(--color-text-muted);
+}
+
+.flow-progress-track {
+  width: 100%;
+  height: 6px;
+  background-color: #E2E8F0;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.flow-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7FA68A, #E3A857);
+  transition: width 0.35s ease;
+}
+
+.flow-step-body {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+
+.flow-step-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #1F2E33;
+  margin-bottom: 0.85rem;
+  line-height: 1.3;
+  max-width: 640px;
+}
+
+.flow-step-desc {
+  font-size: 1.05rem;
+  color: #374A50;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 1.25rem;
+}
+
+/* Step 0: Inhale 4s, Exhale 6s animated circle */
+.flow-breath-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grounding-breath-circle-wrapper {
+  margin: 1rem 0 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.grounding-breath-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #DCEBEE 0%, #7FA68A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: ground-breathe 10s infinite ease-in-out;
+  box-shadow: 0 0 25px rgba(127, 166, 138, 0.35);
+  border: 3px solid #2F6F7E;
+}
+
+@keyframes ground-breathe {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  40% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+.breath-instruction-text {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1F2E33;
+  letter-spacing: 0.03em;
+}
+
+.breath-timing-guide {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #2F6F7E;
+  background-color: #DCEBEE;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+/* Sensory Icon Bubble */
+.sensory-icon-bubble {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #FCECD6;
+  border: 2px solid #E3A857;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 14px rgba(227, 168, 87, 0.25);
+}
+
+.sensory-emoji {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.sensory-step-digit {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #B87B28;
+}
+
+.flow-step-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #E3EEE4;
+  color: #50775B;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+/* Final Step */
+.flow-final-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flow-final-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #E3EEE4;
+  color: #50775B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 2px solid #7FA68A;
+}
+
+.flow-final-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.flow-restart-btn {
+  color: var(--color-text-muted);
+}
+
+/* Flow Nav Footer */
+.flow-nav-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.flow-nav-btn {
+  font-size: 0.92rem;
+  padding: 0.55rem 1.35rem;
+}
+
+.flow-dots-group {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.flow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #CBD5E1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.flow-dot.active {
+  background-color: #2F6F7E;
+  transform: scale(1.3);
+}
+
+/* Tips Container */
+.panic-tips-container {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--color-sage-border);
+  margin-top: 1.5rem;
+}
+
+.panic-tips-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1F2E33;
+  margin-bottom: 0.85rem;
+}
+
+.panic-tips-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.panic-tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: #374A50;
+  line-height: 1.5;
+}
+
+.tip-bullet {
+  color: #7FA68A;
+  font-weight: 800;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+/* Medical Disclaimer */
+.panic-medical-note {
+  margin-top: 1.5rem;
+  padding: 1.15rem 1.4rem;
+  background-color: #FFF7ED;
+  border: 1px solid #FDBA74;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: #7C2D12;
+  line-height: 1.5;
+}
+
+.note-alert-icon {
+  color: #EA580C;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.medical-phone-link {
+  color: #C2410C;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.medical-phone-link:hover {
+  color: #9A3412;
+}
+
 /* Exercises Grid */
 .exercises-grid {
   display: grid;
