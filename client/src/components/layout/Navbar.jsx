@@ -55,11 +55,9 @@ const Navbar = () => {
           <NavLink to="/counselling" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
             Counselling
           </NavLink>
-          {isAuthenticated && (
-            <NavLink to="/journal" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-              Journal
-            </NavLink>
-          )}
+          <NavLink to="/journal" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            Journal
+          </NavLink>
           <NavLink to="/emergency" className={({ isActive }) => `nav-link emergency-nav-link ${isActive ? 'active' : ''}`}>
             Emergency
           </NavLink>
@@ -147,11 +145,9 @@ const Navbar = () => {
               <NavLink to="/counselling" className="mobile-nav-link" onClick={closeMenu}>
                 Counselling
               </NavLink>
-              {isAuthenticated && (
-                <NavLink to="/journal" className="mobile-nav-link" onClick={closeMenu}>
-                  Private Journal
-                </NavLink>
-              )}
+              <NavLink to="/journal" className="mobile-nav-link" onClick={closeMenu}>
+                Private Journal
+              </NavLink>
               <NavLink to="/emergency" className="mobile-nav-link" onClick={closeMenu}>
                 Emergency 24x7 Helplines
               </NavLink>
