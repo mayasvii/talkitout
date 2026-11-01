@@ -25,15 +25,15 @@ const HELPLINES = [
     color: 'teal',
   },
   {
-    name: 'KIRAN Helpline',
-    number: '1800-599-0019',
-    tel: '18005990019',
-    hours: '24x7 • Toll-Free',
-    cost: '100% Free',
-    languages: 'Hindi, English, and 11 Regional Languages',
+    name: 'AASRA Helpline',
+    number: '+91 98204 66726',
+    tel: '+919820466726',
+    hours: '24x7 • Suicide Prevention',
+    cost: 'Confidential Care',
+    languages: 'English & Hindi',
     description:
-      'Supported by the Ministry of Social Justice and Empowerment. Provides early screening, first-aid, psychological support, distress management, and mental wellbeing guidance.',
-    badge: 'Govt. Toll-Free',
+      'Non-profit providing a non-judgmental, accepting environment for anyone in emotional pain, loneliness, or crisis who needs someone warm and attentive to speak with.',
+    badge: 'Suicide Prevention',
     color: 'lavender',
   },
   {
@@ -61,15 +61,15 @@ const HELPLINES = [
     color: 'warm',
   },
   {
-    name: 'AASRA Helpline',
-    number: '+91 98204 66726',
-    tel: '+919820466726',
-    hours: '24x7 • Suicide Prevention',
-    cost: 'Confidential Care',
-    languages: 'English & Hindi',
+    name: 'KIRAN Helpline',
+    number: '1800-599-0019',
+    tel: '18005990019',
+    hours: '24x7 • Toll-Free',
+    cost: '100% Free',
+    languages: 'Hindi, English, and 11 Regional Languages',
     description:
-      'Non-profit providing a non-judgmental, accepting environment for anyone in emotional pain, loneliness, or crisis who needs someone warm and attentive to speak with.',
-    badge: 'Suicide Prevention',
+      'Supported by the Ministry of Social Justice and Empowerment. Provides early screening, first-aid, psychological support, distress management, and mental wellbeing guidance.',
+    badge: 'Govt. Toll-Free',
     color: 'lavender',
   },
   {
@@ -89,22 +89,27 @@ const HELPLINES = [
 const Emergency = () => {
   return (
     <div className="emergency-page page-container">
-      {/* 1. Warm, Reassuring Banner */}
+      {/* 1. Direct & Gentle Suicide & Crisis Support Banner */}
       <div className="emergency-hero-card">
         <div className="emergency-badge">
           <ShieldAlertIcon size={18} />
-          <span>Immediate Emotional & Crisis Support</span>
+          <span>Suicide & Crisis Support</span>
         </div>
-        <h1 className="emergency-title">You are not alone. Help is right here.</h1>
+        <h1 className="emergency-title">You are not alone, and help is available right now.</h1>
         <p className="emergency-intro">
-          If you are feeling overwhelmed, having thoughts of giving up, or simply carrying more weight
-          than you can bear alone, please reach out. There is <strong>no shame</strong> in feeling this way.
-          Every call is <strong>free, anonymous, and 100% confidential</strong>.
+          If you are having thoughts of ending your life, or you feel like you can't go on, please talk
+          to someone now. These feelings can feel permanent, but they can change, and trained people
+          are ready to listen without judging you. Tele-MANAS (14416) is free and open 24x7. If you are
+          in immediate danger, call 112.
         </p>
         <div className="emergency-quick-actions">
-          <a href="tel:14416" className="btn btn-accent btn-lg emergency-call-btn">
+          <a href="tel:14416" className="btn emergency-call-btn btn-lg">
             <PhoneIcon size={20} />
             <span>Call Tele-MANAS: 14416 (Free 24x7)</span>
+          </a>
+          <a href="tel:112" className="btn emergency-call-btn emergency-112-btn btn-lg">
+            <PhoneIcon size={20} />
+            <span>In immediate danger? Call 112</span>
           </a>
           <Link to="/breathe?routine=box-breathing" className="btn btn-secondary btn-lg emergency-breathe-btn">
             <WindIcon size={20} />
@@ -117,7 +122,7 @@ const Emergency = () => {
       <section className="emergency-section">
         <div className="section-title-row">
           <h2 className="dashboard-section-title">Verified 24/7 Helplines in India</h2>
-          <span className="badge-pill">Free & Confidential</span>
+          <span className="badge-pill">24/7 Support</span>
         </div>
 
         <div className="helpline-cards-grid">
