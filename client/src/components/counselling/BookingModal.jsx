@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../../api/axiosInstance';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
+import CounsellorAvatar from './CounsellorAvatar';
 import {
   CloseIcon,
   CalendarIcon,
@@ -228,7 +229,11 @@ const BookingModal = ({ counsellor, onClose, onRefreshCounsellors }) => {
         {/* Top Header */}
         <div className="booking-modal-header">
           <div className="modal-counsellor-summary">
-            <img src={counsellor.photo} alt={counsellor.name} className="modal-counsellor-avatar" />
+            <CounsellorAvatar
+              name={counsellor.name}
+              photo={counsellor.photo}
+              className="modal-counsellor-avatar"
+            />
             <div>
               <h3 className="modal-counsellor-name">{counsellor.name}</h3>
               <p className="modal-counsellor-specialization">{counsellor.specialization}</p>

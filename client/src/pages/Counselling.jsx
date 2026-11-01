@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api/axiosInstance';
 import BookingModal from '../components/counselling/BookingModal';
+import CounsellorAvatar from '../components/counselling/CounsellorAvatar';
 import LoadingSpinner from '../components/common/LoadingSpinner';
 import EmptyState from '../components/common/EmptyState';
 import {
@@ -100,9 +101,9 @@ const Counselling = () => {
               return (
                 <div key={counsellor._id} className="counsellor-profile-card">
                   <div className="counsellor-card-top">
-                    <img
-                      src={counsellor.photo}
-                      alt={counsellor.name}
+                    <CounsellorAvatar
+                      name={counsellor.name}
+                      photo={counsellor.photo}
                       className="counsellor-profile-photo"
                     />
                     <div className="counsellor-primary-info">
